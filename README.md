@@ -11,7 +11,7 @@ CodeCircle is a community-driven platform for learning, collaboration, and growt
 
 ## Getting Started
 To get started with CodeCircle, follow these steps:
-1. Clone the repository: `git clone https://github.com/codecircle-dev/website.git`
+1. Clone the repository: `git clone https://github.com/codecircle-dev/codecircle-dev.github.io `
 
 ## Contribution Guidelines
 We welcome contributions from the community! If you'd like to contribute to CodeCircle, please follow these guidelines:
