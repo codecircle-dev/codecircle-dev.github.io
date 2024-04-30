@@ -1,14 +1,19 @@
 import React from "react";
 import Header from "../includes/Header";
 import Footer from "../includes/Footer";
-import classes from "../../index.module.css";
+import "../../index.css";
+import { Helmet } from "react-helmet";
+
 const Tutorials = () => {
   return (
     <div>
+      <Helmet>
+        <title>Tutorials - CodeCircle</title>
+      </Helmet>
       <Header />
-      <section className={classes.pageContent}>
-        <div className={classes.container}>
-          ˝<h2>Tutorials</h2>
+      <section className="page-content">
+        <div className="container">
+          <h2>Tutorials</h2>
           <ul>
             <li>
               <a href="#">Introduction to HTML</a> - Learn the basics of HTML

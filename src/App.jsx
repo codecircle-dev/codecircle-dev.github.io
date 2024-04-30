@@ -6,7 +6,7 @@ import Jobs from "./components/pages/Jobs";
 import Events from "./components/pages/Events";
 import Challenges from "./components/pages/Challenges";
 import Tutorials from "./components/pages/Tutorials";
-
+import "@fortawesome/fontawesome-free/css/all.css";
 const App = () => {
   return (
     <BrowserRouter>

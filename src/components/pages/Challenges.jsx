@@ -1,13 +1,18 @@
 import React from "react";
 import Header from "../includes/Header";
 import Footer from "../includes/Footer";
-import classes from "../../index.module.css";
+import "../../index.css";
+import { Helmet } from "react-helmet";
+
 const Challenges = () => {
   return (
     <div>
+      <Helmet>
+        <title>Challenges - CodeCircle</title>
+      </Helmet>
       <Header />
-      <section>
-        <div className={classes.container}>
+      <section className="page-content">
+        <div className="container">
           <h2>Coding Challenges</h2>
           <p>Put your coding skills to the test with these challenges:</p>
           <ul>
@@ -26,6 +31,7 @@ const Challenges = () => {
           </ul>
         </div>
       </section>
+
       <Footer />
     </div>
   );

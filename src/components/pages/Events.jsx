@@ -1,14 +1,18 @@
 import React from "react";
 import Header from "../includes/Header";
 import Footer from "../includes/Footer";
-import classes from "../../index.module.css";
+import "../../index.css";
+import { Helmet } from "react-helmet";
 
 const Events = () => {
   return (
     <div>
+      <Helmet>
+        <title>Events - CodeCircle</title>
+      </Helmet>
       <Header />
-      <section className={classes.pageContent}>
-        <div className={classes.container}>
+      <section className="page-content">
+        <div className="container">
           <h2>Events Calendar</h2>
           <p>Check out our upcoming events:</p>
           <ul>
