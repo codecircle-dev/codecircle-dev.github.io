@@ -12,6 +12,10 @@ CodeCircle is a community-driven platform for learning, collaboration, and growt
 ## Contribution Guidelines
 We welcome contributions from the community! If you'd like to contribute to CodeCircle, please follow these guidelines:
 - Fork the repository
+- Clone the fork
+- navigate to the project directory, install dependencies: `npm install`
+- start the development server: `npm run dev`
+- build the project for production: `npm run build`
 - Create a new branch for your feature or bug fix: `git checkout -b feature-name`
 - Make your changes and ensure that the code passes all tests
 - Commit your changes: `git commit -m "Add feature-name"`
