@@ -2,7 +2,7 @@ const crypto = require("crypto");
 const ErrorResponse = require("../utils/errorResponse");
 const User = require("../models/User");
 const sendEmail = require("../utils/sendEmail");
-
+require('dotenv').config();
 
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
@@ -63,7 +63,7 @@ exports.forgotPassword = async (req, res, next) => {
 
     await user.save();
 
-    const resetUrl = `http://localhost:5173/passwordreset/${resetToken}`;
+    const resetUrl = `process.env.frontend_base_url/passwordreset/${resetToken}`;
 
 
     const message = `
