@@ -2,11 +2,10 @@ const crypto = require("crypto");
 const ErrorResponse = require("../utils/errorResponse");
 const User = require("../models/User");
 const sendEmail = require("../utils/sendEmail");
-require('dotenv').config();
+require("dotenv").config();
 
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
-
 
   if (!email || !password) {
     return next(new ErrorResponse("Please provide an email and password", 400));
@@ -30,7 +29,6 @@ exports.login = async (req, res, next) => {
   }
 };
 
-
 exports.register = async (req, res, next) => {
   const { username, email, password } = req.body;
 
@@ -47,9 +45,7 @@ exports.register = async (req, res, next) => {
   }
 };
 
-
 exports.forgotPassword = async (req, res, next) => {
-
   const { email } = req.body;
 
   try {
@@ -62,9 +58,7 @@ exports.forgotPassword = async (req, res, next) => {
     const resetToken = user.getResetPasswordToken();
 
     await user.save();
-
-    const resetUrl = `process.env.frontend_base_url/passwordreset/${resetToken}`;
-
+    const resetUrl = `${process.env.frontend_base_url}/passwordreset/${resetToken}`;
 
     const message = `
       <h1>You have requested a password reset</h1>
@@ -95,9 +89,7 @@ exports.forgotPassword = async (req, res, next) => {
   }
 };
 
-
 exports.resetPassword = async (req, res, next) => {
-
   const resetPasswordToken = crypto
     .createHash("sha256")
     .update(req.params.resetToken)

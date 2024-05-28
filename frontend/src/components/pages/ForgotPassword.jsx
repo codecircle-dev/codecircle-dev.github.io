@@ -9,16 +9,15 @@ const ForgotPassword = () => {
 
   const forgotPasswordHandler = async (e) => {
     e.preventDefault();
-
     const config = {
       header: {
         "Content-Type": "application/json",
       },
     };
-
+    const backendUrl = import.meta.env.VITE_backend_base_url;
     try {
       const { data } = await axios.post(
-        "process.env.REACT_APP_frontend_base_url/api/auth/forgotpassword",
+        `${backendUrl}/api/auth/forgotpassword`,
         { email },
         config
       );
@@ -35,16 +34,14 @@ const ForgotPassword = () => {
 
   return (
     <div>
-      <form
-        onSubmit={forgotPasswordHandler}
-      >
+      <form onSubmit={forgotPasswordHandler}>
         <h3>Forgot Password</h3>
         {error && <span>{error}</span>}
         {success && <span>{success}</span>}
         <div>
           <p>
-            Please enter the email address you register your account with. We
-            will send you reset password confirmation to this email
+            Please enter the email address you registered your account with. We
+            will send you a reset password confirmation to this email
           </p>
           <label htmlFor="email">Email:</label>
           <input
@@ -56,9 +53,7 @@ const ForgotPassword = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <button type="submit">
-          Send Email
-        </button>
+        <button type="submit">Send Email</button>
       </form>
     </div>
   );
