@@ -8,7 +8,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-
+  const backendUrl = import.meta.env.VITE_backend_base_url;
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
@@ -36,7 +36,7 @@ const Register = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/auth/register",
+        `${backendUrl}/api/auth/register`,
         {
           username,
           email,

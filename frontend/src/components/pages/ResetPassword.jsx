@@ -8,7 +8,7 @@ const ResetPassword = () => {
   const [success, setSuccess] = useState("");
 
   const { resetToken } = useParams();
-
+  const backendUrl = import.meta.env.VITE_backend_base_url;
   const resetPasswordHandler = async (e) => {
 
     e.preventDefault();
@@ -30,7 +30,7 @@ const ResetPassword = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/auth/passwordreset/${resetToken}`,
+        `${backendUrl}/api/auth/resetpassword/${resetToken}`,
         { password },
         config
       );

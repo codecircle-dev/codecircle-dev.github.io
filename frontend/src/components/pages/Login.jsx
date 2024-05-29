@@ -8,6 +8,7 @@ const Login = ({ history }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const backendUrl = import.meta.env.VITE_backend_base_url;
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
       navigate("/");
@@ -25,7 +26,7 @@ const Login = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/auth/login",
+        `${backendUrl}/api/auth/login`,
         { email, password },
         config
       );
